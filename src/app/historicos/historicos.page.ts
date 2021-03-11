@@ -11,14 +11,17 @@ import { Requests } from 'src/app/requests';
 export class HistoricosPage implements OnInit {
   public folder: string;
   public online: boolean = navigator.onLine;
-  public result: object;
-  public seleccionado: string;
+  private result: object;
+  private favorito: string;
 
   constructor(private activatedRoute: ActivatedRoute, private requests: Requests, private storage: Storage) { }
 
   ngOnInit() {
     this.folder = this.activatedRoute.snapshot.paramMap.get('id');
-    if (this.storage.get('favorito')) { this.storage.get('favorito').then((data) => { this.requests.historicosPais(data).subscribe(data2 => { this.result = data2; }) ; }); }
+    this.storage.get('favorito').then((data) => { this.favorito = data;
+                                                  this.requests.historicosPais(data).subscribe(data2 => { this.result = data2; }) ;
+    });
+
   }
 
 }

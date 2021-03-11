@@ -10,16 +10,8 @@
 
     <div *ngIf="online == false;"><strong class="capitalize">No hay conexion a internet</strong><br><br><br></div>
 
-    <strong class="capitalize">Historicos</strong>
-
-    <ion-list>
-      <ion-item ng-repeat="result in results"><
-      <strong>
-        {{result.Confirmed}}
-        {{result.Deaths}}
-      </strong>
-      </ion-item>
-    </ion-list>
+    <strong class="capitalize">Datos de {{favorito}} al: </strong>
+    <ion-text *ngFor="let item of result; index as i;"><strong>{{item.Date | json }} <br><br><br>  Muertes: {{item.Deaths | json }} <br>   Casos Confirmados: {{item.Confirmed | json }} <br>   Recuperados:  {{item.Recovered | json }} <br>  Activos:  {{item.Active | json }}</strong></ion-text>
 
 
   </div>
