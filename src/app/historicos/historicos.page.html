@@ -8,8 +8,19 @@
 
   <div id="container">
 
+    <div *ngIf="online == false;"><strong class="capitalize">No hay conexion a internet</strong><br><br><br></div>
+
     <strong class="capitalize">Historicos</strong>
-    <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+
+    <ion-list>
+      <ion-item ng-repeat="result in results"><
+      <strong>
+        {{result.Confirmed}}
+        {{result.Deaths}}
+      </strong>
+      </ion-item>
+    </ion-list>
+
 
   </div>
 </ion-content>

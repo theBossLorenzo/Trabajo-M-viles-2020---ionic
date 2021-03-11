@@ -5,13 +5,15 @@ import {HttpClient} from '@angular/common/http';
   providedIn: 'root'
   }
 ) export class Requests {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+  }
 
-    paisesLocal() {
-      return this.http.get('src/assets/countries.json');
-    }
+  paisesRemoto() {
+    return this.http.get('https://api.covid19api.com/countries');
+  }
 
-    paisesRemoto() {
-      return this.http.get('https://api.covid19api.com/countries');
-    }
+  historicosPais(pais: string) {
+    console.log(pais);
+    return this.http.get('https://api.covid19api.com/total/dayone/country/' + pais);
+  }
 }

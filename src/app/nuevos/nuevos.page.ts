@@ -8,6 +8,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class NuevosPage implements OnInit {
   public folder: string;
+  public online: boolean = navigator.onLine;
 
   constructor(private activatedRoute: ActivatedRoute) { }
 

@@ -8,8 +8,24 @@
 
   <div id="container">
 
-    <strong class="capitalize">Favorito</strong>
-    <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <div *ngIf="online == false;"><strong class="capitalize">No hay conexion a internet!</strong><br><br><br></div>
+
+    <div *ngIf="seleccionado; else block"><strong class="capitalize">Confirma para cambiar tu país favorito!</strong><br><br><br></div>
+    <ng-template #block><strong class="capitalize">Aún no tienes un país favorito, elige uno!</strong><br><br><br></ng-template>
+
+
+
+    <form (ngSubmit)="guardarFavorito(seleccionado)">
+
+        <ion-select [(ngModel)]="seleccionado" name="favorito">
+          <ion-select-option *ngFor="let item of options;" value="{{item.Country}}">{{item.Country}} </ion-select-option>
+        </ion-select>
+      <br><br>
+      <ion-button type="submit" style="float: center;">Confirmar</ion-button>
+
+      
+
+    </form>
 
   </div>
 </ion-content>

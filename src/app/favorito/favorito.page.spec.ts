@@ -3,6 +3,7 @@ import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
 import { FavoritoPage } from './favorito.page';
 
+
 describe('FavoritoPage', () => {
   let component: FavoritoPage;
   let fixture: ComponentFixture<FavoritoPage>;
