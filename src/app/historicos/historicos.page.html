@@ -10,7 +10,8 @@
 
     <div *ngIf="online == false;"><strong class="capitalize">No hay conexion a internet</strong><br><br><br></div>
 
-    <strong class="capitalize">Datos Históricos de {{favorito}} al día de hoy: </strong>
+    <strong *ngIf="favorito; else block" class="capitalize">Datos Históricos de {{favorito}} al día de hoy: </strong>
+    <ng-template #block><strong class="capitalize">Aún no seleccionaste un país favorito, elige uno para observar su información</strong><br><br><br></ng-template>
 
     <div *ngIf="result == false;"><strong class="capitalize"><br>No se encontraron datos de {{favorito}}</strong><br><br><br></div>
 
