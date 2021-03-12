@@ -8,10 +8,16 @@
 
   <div id="container">
 
-    <div *ngIf="online == false;"><strong class="capitalize">No hay conexion a internet</strong><br><br><br></div>
 
-    <strong class="capitalize">Nuevos</strong>
-    <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+      <div *ngIf="online == false;"><strong class="capitalize">No hay conexion a internet</strong><br><br><br></div>
+
+      <strong class="capitalize">Nuevos registros de {{favorito}}: </strong>
+
+      <div *ngIf="resultado == false;"><strong class="capitalize"><br>No se encontraron datos de {{favorito}}</strong><br><br><br></div>
+
+      <strong *ngIf="resultado;" class="capitalize"> <br><br><br> Nuevas Muertes: {{resultado.NewDeaths}} <br><br>  Nuevos Casos Confirmados: {{resultado.NewConfirmed }} <br>   Nuevos Casos Recuperados:  {{resultado.NewRecovered | json}} </strong>
+
+
 
   </div>
 </ion-content>

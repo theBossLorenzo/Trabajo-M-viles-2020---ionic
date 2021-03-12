@@ -14,6 +14,7 @@ export class FavoritoPage implements OnInit {
   private options: object;
   public online: boolean = navigator.onLine;
   public seleccionado: string;
+  public favorito: string;
 
   constructor(private activatedRoute: ActivatedRoute, private requests: Requests, private storage: Storage) { }
 
@@ -22,14 +23,20 @@ export class FavoritoPage implements OnInit {
     this.folder = this.activatedRoute.snapshot.paramMap.get('id');
     this.requests.paisesRemoto().subscribe(data => { this.options = data; }) ;
     if (this.storage.get('favorito')) {
-      this.storage.get('favorito').then((data) => { this.seleccionado = data;
-                                                    console.log(data + ' es el país favorito actual'); });
+      this.storage.get('favorito').then((data) => { this.favorito = data; });
 
     }
   }
 
   guardarFavorito(seleccionado: string){
-    this.storage.ready().then(() => { this.storage.set('favorito', seleccionado).then(() => { console.log(seleccionado + ' guardado correctamente como favorito'); }); });
+    this.storage.ready().then(() => { this.storage.set('favorito', seleccionado).then(() => { this.favorito = seleccionado; }); });
   }
+
+  eliminarFavorito() {
+    this.seleccionado = null;
+    this.favorito = null;
+    this.storage.clear();
+  }
+
 }
 
