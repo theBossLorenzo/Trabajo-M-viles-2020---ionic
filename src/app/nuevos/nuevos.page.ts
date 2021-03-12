@@ -11,10 +11,10 @@ import { Requests } from 'src/app/requests';
 export class NuevosPage implements OnInit {
   public folder: string;
   public online: boolean = navigator.onLine;
-  private result: any;
-  private resultado: Object;
+  public result: any;
+  public resultado: any;
 
-  private favorito: string;
+  public favorito: string;
 
   constructor(private activatedRoute: ActivatedRoute, private requests: Requests, private storage: Storage) {
   }

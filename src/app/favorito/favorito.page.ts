@@ -11,7 +11,7 @@ import { Storage } from '@ionic/storage';
 })
 export class FavoritoPage implements OnInit {
   public folder: string;
-  private options: object;
+  public options: any;
   public online: boolean = navigator.onLine;
   public seleccionado: string;
   public favorito: string;

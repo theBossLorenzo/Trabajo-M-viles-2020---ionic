@@ -11,8 +11,8 @@ import { Requests } from 'src/app/requests';
 export class HistoricosPage implements OnInit {
   public folder: string;
   public online: boolean = navigator.onLine;
-  private result: any;
-  private favorito: string;
+  public result: any;
+  public favorito: string;
 
   constructor(private activatedRoute: ActivatedRoute, private requests: Requests, private storage: Storage) { }
 
