@@ -1,6 +1,6 @@
 {
   "appId": "io.ionic.starter",
-  "appName": "Trabajo Móviles 2020 - ionic",
+  "appName": "myApp",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "www",

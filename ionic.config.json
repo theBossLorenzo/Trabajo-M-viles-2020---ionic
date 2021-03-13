@@ -1,8 +1,7 @@
 {
-  "name": "Trabajo Móviles 2020 - ionic",
+  "name": "myApp",
   "integrations": {
     "capacitor": {}
   },
-  "type": "angular",
-  "id": "39721075"
+  "type": "angular"
 }
