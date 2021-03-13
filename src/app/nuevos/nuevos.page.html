@@ -11,8 +11,8 @@
 
       <div *ngIf="online == false;"><strong class="capitalize">No hay conexion a internet</strong><br><br><br></div>
 
-      <strong *ngIf="favorito; else block" class="capitalize">Nuevos registros de {{favorito}}: </strong>
-      <ng-template #block><strong class="capitalize">Aún no seleccionaste un país favorito, elige uno para ver los últimos registros recolectados</strong><br><br><br></ng-template>
+      <strong *ngIf="online && favorito; else block" class="capitalize">Nuevos registros de {{favorito}}: </strong>
+      <ng-template #block *ngIf="online"><strong class="capitalize">Aún no seleccionaste un país favorito, elige uno para ver los últimos registros recolectados</strong><br><br><br></ng-template>
 
       <div *ngIf="resultado == false;"><strong class="capitalize"><br>No se encontraron datos de {{favorito}}</strong><br><br><br></div>
 

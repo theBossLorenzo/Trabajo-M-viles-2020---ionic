@@ -20,10 +20,18 @@ export class FavoritoPage implements OnInit {
 
   ngOnInit() {
     this.folder = this.activatedRoute.snapshot.paramMap.get('id');
-    this.requests.paisesRemoto().subscribe(data => {
+    if (this.online){
+      this.requests.paisesRemoto().subscribe(data => {
       this.options = data;
       this.options = this.options.sort((a, b) => a.Country < b.Country ? -1 : a.Country > b.Country ? 1 : 0);
-    }) ;
+    }) ; }
+    else {
+          this.requests.paisesLocal().subscribe(data => {
+          this.options = data;
+          this.options = this.options.sort((a, b) => a.Country < b.Country ? -1 : a.Country > b.Country ? 1 : 0);
+      }) ;
+    }
+
     if (this.storage.get('favorito')) {
       this.storage.get('favorito').then((data) => { this.favorito = data; });
     }

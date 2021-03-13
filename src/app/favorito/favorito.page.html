@@ -8,7 +8,7 @@
 
   <div id="container">
 
-    <div *ngIf="online == false;"><strong class="capitalize">No hay conexion a internet!</strong><br><br><br></div>
+
     <div *ngIf="favorito;"><strong class="capitalize">Tu país favorito es {{favorito}}</strong><br><br></div>
     <div *ngIf="favorito; else block"><strong class="capitalize">Confirma para cambiar tu país favorito!</strong><br><br><br></div>
     <ng-template #block><strong class="capitalize">Aún no tienes un país favorito, elige uno!</strong><br><br><br></ng-template>
@@ -21,7 +21,7 @@
           <ion-select-option *ngFor="let item of options;" value="{{item.Country}}">{{item.Country}} </ion-select-option>
         </ion-select>
       <br><br>
-      <ion-button type="submit" style="float: center;"><strong class="capitalize">Confirmar</strong></ion-button>
+      <ion-button type="submit" style="float: center;"><strong>Confirmar</strong></ion-button>
 
     </form>
     <br>

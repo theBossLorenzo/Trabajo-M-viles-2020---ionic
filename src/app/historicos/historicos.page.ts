@@ -19,11 +19,9 @@ export class HistoricosPage implements OnInit {
   ngOnInit() {
     this.folder = this.activatedRoute.snapshot.paramMap.get('id');
     this.storage.get('favorito').then((data) => { this.favorito = data;
-                                                  this.requests.historicosPais(data).subscribe(data2 => { this.result = data2;
-                                                    // tslint:disable-next-line:max-line-length
-                                                                                                          this.result = this.result[this.result.length - 1];
-                                                    // tslint:disable-next-line:max-line-length
-                                                                                                           }) ;
+                                                  this.requests.historicosPais(data).subscribe(data2 => {
+                                                    this.result = data2;
+                                                    this.result = this.result[this.result.length - 1]; }) ;
     });
   }
 
