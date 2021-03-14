@@ -39,6 +39,7 @@ export class FavoritoPage implements OnInit {
 
   guardarFavorito(seleccionado: string){
     this.storage.ready().then(() => { this.storage.set('favorito', seleccionado).then(() => { this.favorito = seleccionado; }); });
+    alert(seleccionado + ' es tu nuevo país favorito');
   }
 
   eliminarFavorito() {

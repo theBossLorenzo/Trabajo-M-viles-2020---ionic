@@ -15,7 +15,10 @@
 
     <div *ngIf="result == false;"><strong class="capitalize"><br>No se encontraron datos de {{favorito}}</strong><br><br><br></div>
 
-    <strong *ngIf="result;" class="capitalize"> <br><br><br> Muertes en total: {{result.Deaths}} <br><br>  Casos Confirmados: {{result.Confirmed }} <br>   Casos Recuperados:  {{result.Recovered | json}} </strong>
+    <strong *ngIf="result;" class="capitalize"> <br><br><br> Muertes en total: {{result.Deaths}} <br><br>  Casos Confirmados: {{result.Confirmed }} <br>   Casos Recuperados:  {{result.Recovered | json}} <br> Casos Activos: {{result.Active | json}} </strong>
+
+    <br><br>
+    <ion-button *ngIf="result;" href="https://twitter.com/intent/tweet?text=Trabajo%20Enfoques%202020%20-%20Ionic.%20Registros%20Historicos%20de%20{{favorito}}%20al%20dia%20de%20hoy:%20Muertes:%20{{result.Deaths}}%20-%20Casos%20confirmados:%20{{result.Confirmed}}%20-%20Casos%20recuperados:%20{{result.Recovered}}%20-%20Casos%20activos:%20{{result.Active}}" target="_blank"><strong>Compartir en Twitter</strong></ion-button>
 
 
   </div>

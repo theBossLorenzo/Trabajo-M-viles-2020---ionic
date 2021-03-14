@@ -19,6 +19,9 @@
       <strong *ngIf="resultado;" class="capitalize"> <br><br><br> Nuevas Muertes: {{resultado.NewDeaths}} <br><br>  Nuevos Casos Confirmados: {{resultado.NewConfirmed }} <br>   Nuevos Casos Recuperados:  {{resultado.NewRecovered | json}} </strong>
 
 
+      <br><br>
+    <ion-button *ngIf="result;" href="https://twitter.com/intent/tweet?text=Trabajo%20Enfoques%202020%20-%20Ionic.%20Nuevos%20registros%20de%20{{favorito}}:%20Muertes:%20{{resultado.NewDeaths}}%20-%20Casos%20confirmados:%20{{resultado.NewConfirmed}}%20-%20Casos%20recuperados:%20{{resultado.NewRecovered}}" target="_blank"><strong>Compartir en Twitter</strong></ion-button>
+
 
   </div>
 </ion-content>
